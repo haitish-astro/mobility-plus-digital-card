@@ -1,77 +1,36 @@
 # Mobility Plus Digital Card
 
-Official static digital business card for Mobility Plus.
+Static, mobile-first digital business card for Mobility Plus. The site uses only
+HTML, CSS, and vanilla JavaScript and is intended for GitHub Pages.
 
-## Project Structure
+## Edit Card Information
 
-```text
-/
-  index.html
-  css/
-    styles.css
-  js/
-    config.js
-    app.js
-  assets/
-    images/
-      logo-placeholder.svg
-      representative-placeholder.svg
-      .gitkeep
-    icons/
-      favicon.svg
-      .gitkeep
-  .gitignore
-  AGENTS.md
-  PROJECT_PLAN.md
-  README.md
-```
+Edit `js/config.js` only. Replace placeholder values for the representative,
+company, phone, email, website, address, services, public card URL, logo, and
+photo. Public visitors cannot edit this information from the website.
 
-All editable business and representative information belongs in `js/config.js`.
-The page renders company details, representative details, services, action links,
-vCard content, share text, and the QR-code target from that single file.
+## Preview Locally
 
-The current values are fictional placeholders and must be replaced with approved
-public Mobility Plus information before launch.
-
-## Current Public Features
-
-- Mobile-first public business card layout.
-- Logo and representative photo placeholders.
-- Call, text, email, website, and optional map actions.
-- Save Contact vCard download.
-- Share Card through the browser share sheet when available.
-- Copy Link fallback.
-- Locally generated QR code for the configured public card URL.
-
-The site does not include a backend, database, login, inquiry form, analytics, or
-customer-data collection.
-
-## Local Preview
-
-No install step, package manager, or build process is required.
-
-Open `index.html` directly in a browser to preview the current static page.
-For example, double-click the file from the project folder or use your browser's
-File > Open option.
-
-The site must remain compatible with GitHub Pages, so use relative paths such as
-`css/styles.css` and `js/app.js`.
-
-## Repository Workflow
-
-This workspace is connected to:
+Open `index.html` directly in a browser, or run a simple static server from the
+repository root:
 
 ```text
-https://github.com/haitish-astro/mobility-plus-digital-card.git
+python -m http.server 4175 --bind 127.0.0.1
 ```
 
-The local `main` branch tracks `origin/main`. After future files are created or changed, publish them to GitHub with:
+Then open `http://127.0.0.1:4175/`.
+
+## Publish With GitHub Pages
+
+1. Commit and push changes to `main`.
+2. In GitHub, open the repository settings.
+3. Go to Pages.
+4. Set Source to `Deploy from a branch`.
+5. Select branch `main` and folder `/root`.
+6. Save and wait for GitHub Pages to publish.
+
+Expected public URL:
 
 ```text
-git status
-git add <changed-files>
-git commit -m "Describe the change"
-git push
+https://haitish-astro.github.io/mobility-plus-digital-card/
 ```
-
-Keep the site static and follow `AGENTS.md` for all project requirements.

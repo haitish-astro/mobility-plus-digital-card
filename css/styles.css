@@ -285,7 +285,8 @@ h1 {
 }
 
 .action-control:focus-visible,
-.dialog-close:focus-visible {
+.dialog-close:focus-visible,
+.qr-action:focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
@@ -376,6 +377,28 @@ h1 {
   color: var(--color-muted);
   font-size: 0.82rem;
   line-height: 1.35;
+}
+
+.qr-actions {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.qr-action {
+  min-height: 3rem;
+  padding: 0.75rem 0.9rem;
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 0.6rem;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.qr-action-secondary {
+  background: #ffffff;
+  color: var(--color-primary-strong);
 }
 
 [hidden] {

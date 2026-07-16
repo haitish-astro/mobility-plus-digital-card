@@ -10,7 +10,11 @@
 
   var qrDialog = document.getElementById("qr-dialog");
   var qrClose = document.getElementById("qr-close");
+  var qrShare = document.getElementById("qr-share");
+  var qrCopy = document.getElementById("qr-copy");
+  var qrReturn = document.getElementById("qr-return");
   var statusMessage = document.getElementById("status-message");
+  var statusTimer = 0;
 
   renderCard(config);
   bindDialog();
@@ -87,6 +91,7 @@
   }
 
   function renderDetails(cardConfig) {
+    var section = document.getElementById("details-section");
     var details = document.getElementById("business-details");
     var address = getAddressDisplay(cardConfig.company.address);
     var items = [
@@ -110,6 +115,10 @@
       row.append(term, description);
       details.appendChild(row);
     });
+
+    if (section) {
+      section.hidden = details.children.length === 0;
+    }
   }
 
   function renderActions(cardConfig) {
@@ -243,7 +252,7 @@
     link.click();
     link.remove();
     URL.revokeObjectURL(url);
-    setStatus("Contact file ready to save.");
+    setStatus("Contact file ready to save.", true);
   }
 
   function buildVCard(cardConfig) {
@@ -328,7 +337,7 @@
       navigator
         .share(shareData)
         .then(function () {
-          setStatus("Card share sheet opened.");
+          setStatus("Card share sheet opened.", true);
         })
         .catch(function () {
           copyCardLink(url);
@@ -342,10 +351,10 @@
   function copyCardLink(url) {
     copyText(url)
       .then(function () {
-        setStatus("Card link copied.");
+        setStatus("Card link copied.", true);
       })
       .catch(function () {
-        setStatus("Copy was not available in this browser.");
+        setStatus("Copy was not available in this browser.", true);
       });
   }
 
@@ -781,13 +790,35 @@
       return;
     }
 
-    qrClose.addEventListener("click", function () {
+    qrClose.addEventListener("click", closeQrDialog);
+
+    if (qrReturn) {
+      qrReturn.addEventListener("click", closeQrDialog);
+    }
+
+    if (qrShare) {
+      qrShare.addEventListener("click", function () {
+        shareCard(config);
+      });
+    }
+
+    if (qrCopy) {
+      qrCopy.addEventListener("click", function () {
+        copyCardLink(getCardUrl(config));
+      });
+    }
+  }
+
+  function closeQrDialog() {
+    if (!qrDialog) {
+      return;
+    }
+
       if (typeof qrDialog.close === "function") {
         qrDialog.close();
       } else {
         qrDialog.removeAttribute("open");
       }
-    });
   }
 
   function setImage(id, imageConfig) {
@@ -813,9 +844,20 @@
     }
   }
 
-  function setStatus(message) {
+  function setStatus(message, temporary) {
     if (statusMessage) {
       statusMessage.textContent = message;
+
+      if (statusTimer) {
+        window.clearTimeout(statusTimer);
+      }
+
+      if (temporary) {
+        statusTimer = window.setTimeout(function () {
+          statusMessage.textContent = "";
+          statusTimer = 0;
+        }, 3000);
+      }
     }
   }
 

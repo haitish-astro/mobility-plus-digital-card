@@ -28,7 +28,7 @@ window.CARD_CONFIG = Object.freeze({
     smsHref: "+12159077587",
     email: "hello.placeholder@example.com",
     websiteUrl: "https://www.mobilityplus.com/pennsylvania/norristown/",
-    publicCardUrl: "https://example.github.io/mobility-plus-digital-card/",
+    publicCardUrl: "https://haitish-astro.github.io/mobility-plus-digital-card/",
     logo: {
       src: "assets/images/logo-placeholder.svg",
       alt: "Fictional Mobility Plus Demo logo placeholder"
@@ -59,7 +59,7 @@ window.CARD_CONFIG = Object.freeze({
 
   // Keep this target aligned with the deployed GitHub Pages URL.
   card: {
-    shareTitle: "Mobility Plus Demo Digital Card",
+    shareTitle: "",
     shareText:
       "Fictional placeholder digital business card. Replace before launch.",
     qrLabel: "Permanent public card link"
@@ -67,8 +67,8 @@ window.CARD_CONFIG = Object.freeze({
 
   // vCard output is generated only from this configuration.
   vCard: {
-    fileName: "fictional-mobility-plus-demo.vcf",
-    organization: "Fictional Mobility Plus Demo",
+    fileName: "mobility-plus-contact.vcf",
+    organization: "",
     note:
       "Fictional placeholder contact generated from the static digital business card."
   }

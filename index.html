@@ -51,7 +51,7 @@
           <ul class="services-list" id="services-list"></ul>
         </section>
 
-        <section class="section details-section" aria-labelledby="details-heading">
+        <section class="section details-section" id="details-section" aria-labelledby="details-heading" hidden>
           <h2 id="details-heading">Business Details</h2>
           <dl class="details-list" id="business-details"></dl>
         </section>
@@ -67,11 +67,16 @@
 
     <dialog class="qr-dialog" id="qr-dialog" aria-labelledby="qr-title">
       <div class="qr-dialog-content">
-        <button class="dialog-close" id="qr-close" type="button">Close</button>
+        <button class="dialog-close" id="qr-close" type="button">Return to Card</button>
         <h2 id="qr-title">QR Code</h2>
         <p class="qr-help">Scan this code to open the same public card link.</p>
         <div class="qr-output" id="qr-output"></div>
         <p class="qr-url" id="qr-url"></p>
+        <div class="qr-actions" aria-label="QR code actions">
+          <button class="qr-action" id="qr-share" type="button">Share Card</button>
+          <button class="qr-action" id="qr-copy" type="button">Copy Link</button>
+          <button class="qr-action qr-action-secondary" id="qr-return" type="button">Return to Card</button>
+        </div>
       </div>
     </dialog>
   </body>
