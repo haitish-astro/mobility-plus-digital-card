@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Logo placeholder</title>
+  <desc id="desc">Generic plus and mobility symbol placeholder.</desc>
+  <rect width="160" height="160" rx="22" fill="#ffffff"/>
+  <circle cx="80" cy="88" r="44" fill="#e5f3ee"/>
+  <path d="M73 38h18v31h31v18H91v31H73V87H42V69h31z" fill="#0f4f3f"/>
+  <path d="M54 119h52" stroke="#c98514" stroke-width="12" stroke-linecap="round"/>
+</svg>

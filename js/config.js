@@ -1,9 +1,9 @@
 /*
   Mobility Plus digital business card configuration.
 
-  Replace every fictional placeholder below with approved public business
-  information before launch. Do not put official company or representative
-  details in index.html or app.js.
+  Replace every fictional placeholder below with approved public Mobility Plus
+  business information before launch. Do not put official company or
+  representative details in index.html or app.js.
 */
 window.CARD_CONFIG = Object.freeze({
   isPlaceholder: true,
@@ -12,39 +12,64 @@ window.CARD_CONFIG = Object.freeze({
 
   // Replace this section with approved public company information.
   company: {
-    name: "Fictional Mobility Demo Co.",
-    initials: "FM",
-    tagline: "Placeholder mobility support",
+    name: "Mobility Plus - Norristown, PA",
+    tagline: "Digital Business Card",
     description:
-      "This is fictional placeholder copy for a static digital business card. Replace it with approved public company messaging.",
-    websiteUrl: "https://example.com/fictional-mobility-demo",
-    serviceArea: "Placeholder Service Area, Example State",
-    publicCardUrl: "https://example.github.io/mobility-plus-digital-card/"
+      "This fictional card represents a local mobility equipment provider. Replace this copy with approved public Mobility Plus messaging before launch.",
+    serviceArea: "Norristown, PA. & nearby communities",
+    services: [
+      "Mobility scooter consultations",
+      "Power chair support",
+      "Lift chair guidance",
+      "Accessibility equipment recommendations"
+    ],
+    phoneDisplay: "(215) 907-7587",
+    phoneHref: "+12159077587",
+    smsHref: "+12159077587",
+    email: "hello.placeholder@example.com",
+    websiteUrl: "https://www.mobilityplus.com/pennsylvania/norristown/",
+    publicCardUrl: "https://example.github.io/mobility-plus-digital-card/",
+    logo: {
+      src: "assets/images/logo-placeholder.svg",
+      alt: "Fictional Mobility Plus Demo logo placeholder"
+    },
+    address: {
+      display: "2123 W Main St, Norristown, PA 19403",
+      street: "2123 W Main St",
+      locality: "Norristown",
+      region: "PA",
+      postalCode: "19403",
+      country: "US",
+      mapUrl:
+        "google.com/maps?sca_esv=8841194606cfa8ed&output=search&q=mobility+plus+norristown&source=lnms&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cTs4PJElQ4Z4ROUfAdKhH1s1TzWjRqm_NBkfHz-gLe8PwsNEEDTn6x1hajjzth4V1xRzgnxLeWKOQZnqpZMeTiot3ORrOj6Upv_V9TaAJ7Ck72aAmkHcqXbadfjliNGtlFW3EhP7XgCiXXbf4jyh9WRREVVkzdMzBM_7uX_1xtVa5jpfHvjI1kefHIUXd9W7Pio_Edw&entry=mc&ved=1t:200715&ictx=111"
+    }
   },
 
   // Replace this section with approved public representative information.
   representative: {
-    fullName: "Alex Placeholder",
-    title: "Demo Accessibility Consultant",
-    phoneDisplay: "(555) 010-1357",
-    phoneHref: "+15550101357",
-    smsHref: "+15550101357",
-    email: "alex.placeholder@example.com"
+    fullName: "Vishal Gandhi",
+    firstName: "Vishal",
+    lastName: "Gandhi",
+    title: "Co-Partner / Lead Tech",
+    photo: {
+      src: "assets/images/representative-placeholder.svg",
+      alt: "Fictional representative photo placeholder"
+    }
   },
 
-  // Replace this section with the approved public service location or map target.
-  location: {
-    label: "Placeholder Map",
-    addressDisplay: "123 Example Avenue, Demo City, ST 00000",
-    mapUrl:
-      "https://www.google.com/maps/search/?api=1&query=123%20Example%20Avenue%20Demo%20City%20ST%2000000"
+  // Keep this target aligned with the deployed GitHub Pages URL.
+  card: {
+    shareTitle: "Mobility Plus Demo Digital Card",
+    shareText:
+      "Fictional placeholder digital business card. Replace before launch.",
+    qrLabel: "Permanent public card link"
   },
 
-  // Edit these labels only when the planned public feature list changes.
-  plannedFeatures: [
-    "Save Contact vCard",
-    "Share Card",
-    "Copy Link",
-    "Transferable QR Code"
-  ]
+  // vCard output is generated only from this configuration.
+  vCard: {
+    fileName: "fictional-mobility-plus-demo.vcf",
+    organization: "Fictional Mobility Plus Demo",
+    note:
+      "Fictional placeholder contact generated from the static digital business card."
+  }
 });

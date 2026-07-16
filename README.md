@@ -14,8 +14,11 @@ Official static digital business card for Mobility Plus.
     app.js
   assets/
     images/
+      logo-placeholder.svg
+      representative-placeholder.svg
       .gitkeep
     icons/
+      favicon.svg
       .gitkeep
   .gitignore
   AGENTS.md
@@ -24,8 +27,24 @@ Official static digital business card for Mobility Plus.
 ```
 
 All editable business and representative information belongs in `js/config.js`.
+The page renders company details, representative details, services, action links,
+vCard content, share text, and the QR-code target from that single file.
+
 The current values are fictional placeholders and must be replaced with approved
 public Mobility Plus information before launch.
+
+## Current Public Features
+
+- Mobile-first public business card layout.
+- Logo and representative photo placeholders.
+- Call, text, email, website, and optional map actions.
+- Save Contact vCard download.
+- Share Card through the browser share sheet when available.
+- Copy Link fallback.
+- Locally generated QR code for the configured public card URL.
+
+The site does not include a backend, database, login, inquiry form, analytics, or
+customer-data collection.
 
 ## Local Preview
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Representative photo placeholder</title>
+  <desc id="desc">Generic profile silhouette placeholder.</desc>
+  <rect width="240" height="240" rx="120" fill="#e5f3ee"/>
+  <circle cx="120" cy="88" r="42" fill="#0f4f3f"/>
+  <path d="M48 212c10-48 39-72 72-72s62 24 72 72" fill="#0f4f3f"/>
+  <path d="M68 204c12-28 31-42 52-42s40 14 52 42" fill="#ffffff" opacity=".18"/>
+</svg>

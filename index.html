@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Static digital business card.">
+    <meta name="description" content="Static public digital business card.">
+    <meta name="theme-color" content="#0f4f3f">
     <title>Digital Business Card</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/config.js" defer></script>
     <script src="js/app.js" defer></script>
@@ -12,50 +14,65 @@
   <body>
     <a class="skip-link" href="#card">Skip to card</a>
 
-    <main class="site-shell">
-      <section class="card" id="card" aria-labelledby="representative-name">
-        <p class="placeholder-notice" data-field="placeholderNotice">
-          Placeholder business information. Replace before launch.
-        </p>
+    <main class="page-shell">
+      <article class="card" id="card" aria-labelledby="representative-name">
+        <p class="placeholder-banner" id="placeholder-notice" hidden></p>
 
-        <header class="card-header">
-          <div class="logo-mark" data-field="companyInitials" aria-hidden="true"></div>
-          <div class="identity">
-            <p class="eyebrow" data-field="companyTagline"></p>
-            <h1 id="representative-name" data-field="representativeName"></h1>
-            <p class="role" data-field="representativeTitle"></p>
+        <header class="hero">
+          <div class="brand-bar">
+            <img class="brand-logo" id="company-logo" alt="">
+            <div class="brand-text">
+              <p class="eyebrow" id="company-tagline"></p>
+              <p class="company-kicker" id="company-name-small"></p>
+            </div>
+          </div>
+
+          <div class="profile">
+            <img class="profile-photo" id="representative-photo" alt="">
+            <div class="profile-copy">
+              <h1 id="representative-name"></h1>
+              <p class="job-title" id="representative-title"></p>
+            </div>
           </div>
         </header>
 
-        <section class="company-summary" aria-labelledby="company-heading">
-          <h2 id="company-heading" data-field="companyName"></h2>
-          <p data-field="companyDescription"></p>
+        <section class="section company-section" aria-labelledby="company-name">
+          <h2 id="company-name"></h2>
+          <p id="company-description"></p>
         </section>
 
-        <section aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Contact Actions</h2>
-          <div class="action-grid" id="contact-actions"></div>
+        <section class="section info-section" id="service-area-section" aria-labelledby="service-area-heading" hidden>
+          <h2 id="service-area-heading">Service Area</h2>
+          <p id="service-area"></p>
         </section>
 
-        <section class="details-panel" aria-labelledby="details-heading">
-          <h2 id="details-heading">Public Details</h2>
-          <dl class="details-list">
-            <div>
-              <dt>Service Area</dt>
-              <dd data-field="serviceArea"></dd>
-            </div>
-            <div>
-              <dt>Public Card URL</dt>
-              <dd data-field="publicCardUrl"></dd>
-            </div>
-          </dl>
+        <section class="section services-section" id="services-section" aria-labelledby="services-heading" hidden>
+          <h2 id="services-heading">Services</h2>
+          <ul class="services-list" id="services-list"></ul>
         </section>
 
-        <section class="next-features" aria-labelledby="next-features-heading">
-          <h2 id="next-features-heading">Planned Features</h2>
-          <ul id="planned-features"></ul>
+        <section class="section details-section" aria-labelledby="details-heading">
+          <h2 id="details-heading">Business Details</h2>
+          <dl class="details-list" id="business-details"></dl>
         </section>
-      </section>
+
+        <section class="section actions-section" aria-labelledby="actions-heading">
+          <h2 id="actions-heading">Quick Actions</h2>
+          <div class="action-grid" id="action-grid"></div>
+        </section>
+
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </article>
     </main>
+
+    <dialog class="qr-dialog" id="qr-dialog" aria-labelledby="qr-title">
+      <div class="qr-dialog-content">
+        <button class="dialog-close" id="qr-close" type="button">Close</button>
+        <h2 id="qr-title">QR Code</h2>
+        <p class="qr-help">Scan this code to open the same public card link.</p>
+        <div class="qr-output" id="qr-output"></div>
+        <p class="qr-url" id="qr-url"></p>
+      </div>
+    </dialog>
   </body>
 </html>
